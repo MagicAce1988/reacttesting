@@ -3,9 +3,11 @@ import "./styles.scss";
 import Logo from "../../assests/graphics/logo.png";
 
 const Header = () => (
-  <header>
+  <header data-test="headerComponent">
     <div className="wrap">
-      <div className="logo"><img src={Logo} alt='logo'/></div>
+      <div className="logo">
+        <img data-test='logoIMG' src={Logo} alt="logo" />
+      </div>
     </div>
   </header>
 );
