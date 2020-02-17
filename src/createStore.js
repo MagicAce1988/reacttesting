@@ -3,10 +3,9 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import ReduxThunk from "redux-thunk";
 import RootReducer from "./reducers";
 
-const middlewares = [ReduxThunk];
+export const middlewares = [ReduxThunk];
 
 const composeEnhancers = composeWithDevTools({
-  // Specify here name, actionsBlacklist, actionsCreators and other options
 });
 
 export const createStoreWithMiddleware = composeEnhancers(

@@ -1,10 +1,14 @@
 import postReducer from "./postReducer";
-import { GET_POSTS } from "./posts.actionTypes";
+import { GET_POSTS } from "../../actions/types";
 
 describe("Posts Reducer", () => {
   it("Should return default state", () => {
     const newState = postReducer(undefined, {});
-    expect(newState).toEqual({ posts: [] });
+    expect(newState).toEqual({
+      postsLoading: false,
+      postsError: "",
+      posts: []
+    });
   });
 
   it("Should return new state if receiving type", () => {
@@ -22,6 +26,10 @@ describe("Posts Reducer", () => {
       }
     );
 
-    expect(newState).toEqual({ posts: posts });
+    expect(newState).toEqual({
+      postsLoading: true,
+      postsError: "",
+      posts: []
+    });
   });
 });
